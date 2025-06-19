@@ -1,0 +1,18 @@
+---
+interface CardProps {
+  title: string;
+  description: string;
+  thumbnail: { src: string, width?: number, height?: number, [key: string]: any };
+  href?: string;
+}
+const { title, description, thumbnail, href } = Astro.props;
+---
+
+<div class="card">
+  <img src={thumbnail.src} alt={title} class="card-img-top object-fit-cover" style="max-height: 9rem;" />
+  <div class="card-body">
+    <h5 class="card-title">{ title }</h5>
+    <p class="card-text">{ description }</p>
+    <a href={href} class="btn btn-primary">閲覧する</a>
+  </div>
+</div>
