@@ -13,6 +13,6 @@ const { title, description, thumbnail, href } = Astro.props;
   <div class="card-body">
     <h5 class="card-title">{ title }</h5>
     <p class="card-text">{ description }</p>
-    <a href={href} class="btn btn-primary">閲覧する</a>
+    <a href={href} class="btn btn-primary">{ language.SHOW_POST }</a>
   </div>
 </div>
