@@ -58,6 +58,14 @@ const getThumbnailImage = (name: string) => {
     </div>
   </div>
   <div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <Card 
+        title="Invector"
+        description="TPSコントローラー"
+        thumbnail={getThumbnailImage('invector')}
+        href='/invector'
+      />
+    </div>
     {
       posts.map((post) => (
         <div class="col-lg-3 col-md-6 col-sm-12">
