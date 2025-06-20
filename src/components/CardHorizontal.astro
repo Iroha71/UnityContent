@@ -1,0 +1,22 @@
+---
+interface Props {
+  title: string;
+  img: { src: string, width?: number, height?: number, [key: string]: any };
+}
+const { title, img } = Astro.props;
+---
+
+<div class="card" style="width: 18rem;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src={img.src} class="object-fit-cover img-fluid" style="height: 100%;" />
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{ title }</h5>
+        <h6 class="card-subtitle">Card Sub</h6>
+        <a href="" class="card-link">閲覧する</a>
+      </div>
+    </div>
+  </div>
+</div>
