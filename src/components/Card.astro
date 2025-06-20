@@ -8,7 +8,7 @@ interface CardProps {
 const { title, description, thumbnail, href } = Astro.props;
 ---
 
-<div class="card">
+<div class="card mb-3">
   <img src={thumbnail.src} alt={title} class="card-img-top object-fit-cover" style="max-height: 9rem;" />
   <div class="card-body">
     <h5 class="card-title">{ title }</h5>

@@ -1,15 +1,52 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { articleInfos } from '../consts/articles';
 import Card from '../components/Card.astro';
-import ai from '../assets/imgs/thumbnails/ai.jpg';
 import invector from '../assets/imgs/thumbnails/invector.webp';
+import dialoguesystem from '../assets/imgs/thumbnails/dialoguesystem.webp';
+import enviro from '../assets/imgs/thumbnails/enviro.webp';
+import gaia from '../assets/imgs/thumbnails/gaia.webp';
+import game_devices from '../assets/imgs/thumbnails/game_devices.jpg';
+import hap from '../assets/imgs/thumbnails/hap.webp';
+import tower from '../assets/imgs/thumbnails/tower.jpg'
+import questmachine from '../assets/imgs/thumbnails/questmachine.webp';
+import realtoon from '../assets/imgs/thumbnails/realtoon.webp';
+import hanger from '../assets/imgs/thumbnails/hanger.jpg';
+import controller from '../assets/imgs/thumbnails/controllers.jpg';
+import display_room from '../assets/imgs/thumbnails/display_room.jpg';
+import savepoint from '../assets/imgs/thumbnails/savepoint.jpg';
+import filament_bulb from '../assets/imgs/thumbnails/filament_bulb.jpg';
 
 const posts = await Astro.glob('../pages/*/index.md')
 const getThumbnailImage = (name: string) => {
   switch (name) {
     case 'invector':
       return invector;
+    case 'dialoguesystem':
+      return dialoguesystem;
+    case 'enviro':
+      return enviro;
+    case 'gaia':
+      return gaia;
+    case 'game_devices':
+      return game_devices;
+    case 'hap':
+      return hap;
+    case 'tower':
+      return tower;
+    case 'questmachine':
+      return questmachine;
+    case 'realtoon':
+      return realtoon;
+    case 'hanger':
+      return hanger;
+    case 'controller':
+      return controller;
+    case 'display_room':
+      return display_room;
+    case 'savepoint':
+      return savepoint;
+    case 'filament_bulb':
+      return filament_bulb;
   }
 }
 ---
@@ -20,15 +57,6 @@ const getThumbnailImage = (name: string) => {
       <p>記事一覧</p>
     </div>
   </div>
-  <!-- <div class="row">
-    {
-      articleInfos.map((article) => (
-        <div class="col">
-          <Card title={article.title} img={ai} />
-        </div>
-      ))
-    }
-  </div> -->
   <div class="row">
     {
       posts.map((post) => (
