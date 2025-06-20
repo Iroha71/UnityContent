@@ -1,15 +1,22 @@
 ---
+import { language } from "../consts/message";
+import { Image } from "astro:assets";
 interface CardProps {
   title: string;
   description: string;
-  thumbnail: { src: string, width?: number, height?: number, [key: string]: any };
-  href?: string;
+  thumbnail: {
+      src: string;
+      width: number;
+      height: number;
+      format: "png" | "jpg" | "jpeg" | "tiff" | "webp" | "gif" | "svg" | "avif";
+  };
+  href: string;
 }
 const { title, description, thumbnail, href } = Astro.props;
 ---
 
 <div class="card mb-3">
-  <img src={thumbnail.src} alt={title} class="card-img-top object-fit-cover" style="max-height: 9rem;" />
+  <Image src={thumbnail} alt={description} class="card-img-top object-fit-cover" style="max-height: 9rem;" />
   <div class="card-body">
     <h5 class="card-title">{ title }</h5>
     <p class="card-text">{ description }</p>
