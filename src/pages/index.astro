@@ -18,7 +18,7 @@ const posts = await getCollection('post');
         title="Invector"
         description="TPSコントローラー"
         thumbnail={invector}
-        href='/invector'
+        href='/UnityContent/invector'
       />
     </div>
     {
@@ -28,7 +28,7 @@ const posts = await getCollection('post');
             title={post.data.title}
             description={post.data.description}
             thumbnail={post.data.thumbnail}
-            href={`/post/${post.slug}`}
+            href={`/UnityContent/post/${post.slug}`}
           />
         </div>
       ))
