@@ -3,7 +3,18 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import { getCollection } from 'astro:content';
 import invector from '../content/invector/imgs/invector.webp';
+import CategoryFilter from '../components/CategoryFilter.astro';
+import type { Category } from '../consts/variables'
 const posts = await getCollection('post');
+
+const getCategories = () => {
+  let categories: Category[] = [];
+  posts.forEach(element => {
+    categories.push({name: element.data.title, count: 1});
+  });
+
+  return categories;
+}
 ---
 
 <Layout>
@@ -13,6 +24,8 @@ const posts = await getCollection('post');
     </div>
   </div>
   <div class="row">
+    <CategoryFilter categories={getCategories()} />
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas">hiraku</button>
     <div class="col-lg-3 col-md-6 col-sm-12">
       <Card 
         title="Invector"
