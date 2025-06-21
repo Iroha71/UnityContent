@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "astro": "^5.9.4",
-    "bootstrap": "^5.3.7"
+    "bootstrap": "^5.3.7",
+    "dotenv": "^16.5.0"
   }
 }
