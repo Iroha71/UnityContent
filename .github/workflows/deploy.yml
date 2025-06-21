@@ -16,7 +16,12 @@ jobs:
     steps:
       - name: リポジトリへチェックアウト
         uses: actions/checkout@v4
+      - name: 最新タグの取得
+        id: get_latest_tag
+        run: echo "VERSION=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
       - name: ライブラリのインストールとビルド
+        env:
+          VERSION: ${{ env.VERSION }}
         uses: withastro/action@v3
   deploy:
     needs: build
