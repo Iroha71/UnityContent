@@ -8,12 +8,17 @@ import type { Category } from '../consts/variables'
 const posts = await getCollection('post');
 
 const getCategories = () => {
-  let categories: Category[] = [];
-  posts.forEach(element => {
-    categories.push({name: element.data.title, count: 1});
+  const categoryMap: Category[] = [];
+  posts.forEach(post => {
+    const matchedCategory = categoryMap.find(category => category.id == post.data.category.id);
+    if (matchedCategory) {
+      matchedCategory.count++;
+    } else {
+      categoryMap.push({ name: post.data.category.name, count: 1, id: post.data.category.id });
+    }
   });
-
-  return categories;
+  
+  return categoryMap;
 }
 ---
 

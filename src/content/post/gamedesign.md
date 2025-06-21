@@ -2,6 +2,7 @@
 title: ゲームデザインTIPS
 description: ゲームデザインに関する資料
 thumbnail: ./thumbnails/game_devices.jpg
+category: { id: design, name: 設計 }
 ---
 
 # ゲームデザイン資料

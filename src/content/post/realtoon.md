@@ -2,6 +2,7 @@
 title: Real Toon
 description: アニメ調シェーダー
 thumbnail: ./thumbnails/realtoon.webp
+category: { id: shader, name: シェーダー }
 ---
 
 # Realtoonの設定について

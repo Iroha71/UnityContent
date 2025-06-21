@@ -2,6 +2,7 @@
 title: シーン作成時の作業
 description: 追加すべきオブジェクトを記載
 thumbnail: ./thumbnails/controllers.jpg
+category: { id: tips, name: TIPS }
 ---
 
 # シーン追加した際に行う事

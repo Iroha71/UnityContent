@@ -2,6 +2,7 @@
 title: ボタン処理まとめ
 description: 長押し・同時押しなどの処理方法
 thumbnail: ./imgs/controllers.jpg
+category: { id: controller, name: キャラ操作 }
 tags: ["キャラコン"]
 ---
 

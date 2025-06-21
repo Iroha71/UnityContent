@@ -2,6 +2,7 @@
 title: 役立つTIPS
 description: ゲームデザインや実装で役立つメモ
 thumbnail: ./thumbnails/filament_bulb.jpg
+category: { id: tips, name: TIPS }
 ---
 
 # 役立つ TIPS

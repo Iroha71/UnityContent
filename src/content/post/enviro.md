@@ -2,6 +2,7 @@
 title: Enviro3
 description: 天候操作アセット
 thumbnail: ./thumbnails/enviro.webp
+category: { id: environment, name: 地形・環境 }
 ---
 
 # Enviro3

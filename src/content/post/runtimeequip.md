@@ -2,6 +2,7 @@
 title: ゲーム内での服装変更方法
 description: 実装方法について記載
 thumbnail: ./thumbnails/hanger.jpg
+category: { id: design, name: 設計 }
 ---
 
 # ゲーム内で服装変更
