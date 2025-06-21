@@ -1,7 +1,7 @@
 name: Github Pagesへのデプロイ
 on:
   push:
-    branchies:
+    branches:
       - main
   workflow_dispatch:
 
