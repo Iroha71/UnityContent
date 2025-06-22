@@ -2,6 +2,7 @@
 title: AIへのパラメータ追加
 description: AIへのパラメータ（スタミナなど）の追加方法
 thumbnail: ./imgs/ai.jpg
+category: { id: ai, name: AI }
 tags: ["AI"]
 ---
 

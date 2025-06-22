@@ -2,6 +2,7 @@
 title: 自作スクリプト集
 description: マップ機能など自作したコンポーネントまとめ
 thumbnail: ./thumbnails/tower.jpg
+category: { id: design, name: 設計 }
 ---
 
 # 自作スクリプト

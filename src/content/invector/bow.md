@@ -2,6 +2,7 @@
 title: 弓について
 description: 弓を任意のオブジェクトで設定する方法
 thumbnail: ./imgs/bow.jpg
+category: { id: weapon, name: 武器 }
 tags: ["戦闘"]
 ---
 

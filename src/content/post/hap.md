@@ -2,6 +2,7 @@
 title: Horse Animset Pro
 description: 騎乗システム
 thumbnail: ./thumbnails/hap.webp
+category: { id: 'controller', name: キャラ操作 }
 ---
 
 # Horse Animset Pro

@@ -2,6 +2,7 @@
 title: テイクダウンの実装
 description: 実装手順の記載
 thumbnail: ./imgs/broken_grass.jpg
+category: { id: combat, name: 戦闘 }
 ---
 
 # テイクダウン
