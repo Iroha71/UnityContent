@@ -1,12 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import { getCollection } from 'astro:content';
 import invector from '../content/invector/imgs/invector.webp';
-import CategoryFilter from '../components/CategoryFilter.astro';
+import { getCollection } from 'astro:content';
 import type { Category } from '../consts/variables'
-const posts = await getCollection('post');
+import FilterablePosts from '../components/FilterablePosts.tsx';
+import type { CardProps } from '../consts/variables';
 
+const posts = await getCollection('post');
+const result = [...posts, {
+  id: 'invector'
+}]
 const getCategories = () => {
   const categoryMap: Category[] = [];
   posts.forEach(post => {
@@ -20,36 +23,44 @@ const getCategories = () => {
   
   return categoryMap;
 }
+
+const getAllPosts = (): CardProps[] => {
+  let allPosts: CardProps[] = [];
+  allPosts.push({
+    title: 'Invector',
+    description: 'TPSコントローラー',
+    thumbnail: invector.src,
+    slug: 'invector',
+    category: { id: 'controller', name: 'キャラ操作' }
+  });
+  posts.forEach(post => {
+    allPosts.push({
+      title: post.data.title,
+      description: post.data.description,
+      thumbnail: post.data.thumbnail.src,
+      slug: post.slug,
+      category: post.data.category
+    });
+  });
+
+  return allPosts;
+}
 ---
 
 <Layout>
 	<div class="row">
     <div class="col">
-      <p>記事一覧</p>
+      <span>記事一覧</span>
+      <button class="btn btn-primary" 
+        type="button"
+        data-bs-toggle="offcanvas" 
+        data-bs-target="#offcanvas"
+        aria-controls="offcanvas">
+        フィルター
+      </button>
     </div>
   </div>
   <div class="row">
-    <CategoryFilter categories={getCategories()} />
-    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas">hiraku</button>
-    <div class="col-lg-3 col-md-6 col-sm-12">
-      <Card 
-        title="Invector"
-        description="TPSコントローラー"
-        thumbnail={invector}
-        href='/UnityContent/invector'
-      />
-    </div>
-    {
-      posts.map((post) => (
-        <div class="col-lg-3 col-md-6 col-sm-12">
-          <Card
-            title={post.data.title}
-            description={post.data.description}
-            thumbnail={post.data.thumbnail}
-            href={`/UnityContent/post/${post.slug}`}
-          />
-        </div>
-      ))
-    }
+    <FilterablePosts posts={getAllPosts()} client:load />
   </div>
 </Layout>
