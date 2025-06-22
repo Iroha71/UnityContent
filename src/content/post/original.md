@@ -165,7 +165,7 @@ public async void CallHitstop(float hitstopTime)
 
 - 3d座標→2d座標に変換
 
-  ``` csharp[worldpos.cs]
+  ```csharp [worldpos.cs]
   Vector3 screenPosition = mapCamera.WorldToScreenPoint(worldPosition);
   RectTransformUtility.ScreenPointToLocalPointInRectangle(mapImage, screenPosition, null, out Vector2 localpoint);
   transform.localPosition = localpoint;
@@ -184,7 +184,7 @@ public async void CallHitstop(float hitstopTime)
 - シーン開始時に暗転状態から始める
   - Start時に呼び出し
 
-  ``` csharp[fade.cs]
+  ``` csharp [fade.cs]
   public async void HideScene()
   {
       canvas.enabled = GetComponent<Canvas>();
