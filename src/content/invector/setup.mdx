@@ -8,6 +8,14 @@ category: { id: controller, name: キャラ操作 }
 # キャラクターのセットアップ
 
 - [キャラクターのセットアップ](#キャラクターのセットアップ)
+  - [プレイヤーの初期設定手順](#プレイヤーの初期設定手順)
+    - [キャラクター作成](#キャラクター作成)
+    - [乗馬機能の追加](#乗馬機能の追加)
+    - [カメラアングルの調整](#カメラアングルの調整)
+    - [戦闘拡張スクリプトの設定](#戦闘拡張スクリプトの設定)
+    - [戦闘アニメーションの作成](#戦闘アニメーションの作成)
+    - [オリジナルアイテムの作成](#オリジナルアイテムの作成)
+    - [攻撃エフェクトの実装](#攻撃エフェクトの実装)
   - [カメラの設定](#カメラの設定)
   - [カバーアドオン](#カバーアドオン)
   - [キャラクター自身に機能追加する場合](#キャラクター自身に機能追加する場合)
@@ -19,6 +27,71 @@ category: { id: controller, name: キャラ操作 }
     - [武器の設定](#武器の設定)
     - [攻撃モーションとリアクション](#攻撃モーションとリアクション)
   - [ThrowManagerの編集](#throwmanagerの編集-1)
+
+## プレイヤーの初期設定手順
+
+### キャラクター作成
+
+1. キーコンフィグ決定
+2. MeleeManagerの設定
+   1. hitLayerの設定
+   2. recoilをなしにする
+3. Handlerの位置を調整する
+   1. Righthand / Lefthandと各DefaultHandlerを移動する
+4. 足音の編集（defaultSurface）
+
+**HorseAnimsetProを利用予定の場合、以下の手順は省略**
+
+5. ローリングアニメーションと速度の設定
+   1. 基本はRootMotionを有効にしておく
+   2. <a href="./rolling_cancell#ローリング設定値" target="_blank">ローリング設定</a>を参照する
+6. Locomotionアニメーションの設定
+   1. FreeLocomotion
+   2. StrafeLocomotion
+
+### 乗馬機能の追加
+
+1. [HAPの設定手順](https://malbers-animations.gitbook.io/animal-controller/annex/integrations/invector-templates)に従って、初期設定を行う
+2. Invector入力対応スクリプトを作成する
+3. Realistic Horse > MalbersInput > Strafeを削除する
+4. ローリングアニメーションと速度の設定
+   1. 基本はRootMotionを有効にしておく
+   2. <a href="./rolling_cancell#ローリング設定値" target="_blank">ローリング設定</a>を参照する
+5. Locomotionアニメーションの設定
+   1. FreeLocomotion
+   2. StrafeLocomotion
+6. 足音の編集（defaultSteps）とHorse > Effectsの変更
+
+### カメラアングルの調整
+
+1. vThirdPersonCameraのLockOn・Defaultのアングルを調整
+   1. [参考 - カメラの設定](#カメラの設定)
+
+### 戦闘拡張スクリプトの設定
+
+<a href="https://github.com/Iroha71/unity-scripts/tree/main/BattleDirection">戦闘拡張スクリプト</a>をプレイヤーの子要素に配置する
+
+### 戦闘アニメーションの作成
+
+1. 以下のアニメーションを編集する
+   1. FreeLocomotion
+   2. StrafeLocomotion
+   3. WeakAttacks
+   4. StrongAttacks
+   5. Defense
+   6. Recoil
+   7. Big Hit Reaction
+2. Invectorのデフォルトアイテムリストを使用した状態で、武器を装備し、アニメーションを確認する
+
+### オリジナルアイテムの作成
+
+1. アイテムリストを作成し、ItemManagerに設定する
+2. アイテムに武器や回復アイテムを作成する
+
+### 攻撃エフェクトの実装
+
+1. <a href="https://github.com/Iroha71/unity-scripts/tree/main/AttackEffectAttacher">攻撃エフェクト設定ツール</a>を導入する。
+2. 各武器モーションのエフェクトを設定する。
 
 ## カメラの設定
 
