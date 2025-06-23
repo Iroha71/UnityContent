@@ -2,27 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import invector from '../content/invector/imgs/invector.webp';
 import { getCollection } from 'astro:content';
-import type { Category } from '../consts/variables'
 import FilterablePosts from '../components/FilterablePosts.tsx';
 import type { CardProps } from '../consts/variables';
 
 const posts = await getCollection('post');
-const result = [...posts, {
-  id: 'invector'
-}]
-const getCategories = () => {
-  const categoryMap: Category[] = [];
-  posts.forEach(post => {
-    const matchedCategory = categoryMap.find(category => category.id == post.data.category.id);
-    if (matchedCategory) {
-      matchedCategory.count++;
-    } else {
-      categoryMap.push({ name: post.data.category.name, count: 1, id: post.data.category.id });
-    }
-  });
-  
-  return categoryMap;
-}
 
 const getAllPosts = (): CardProps[] => {
   let allPosts: CardProps[] = [];
