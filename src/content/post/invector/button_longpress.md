@@ -4,6 +4,7 @@ description: 長押し・同時押しなどの処理方法
 thumbnail: ./imgs/controllers.jpg
 category: { id: controller, name: キャラ操作 }
 tags: ["キャラコン"]
+directory: 'invector'
 ---
 
 # 長押し処理・同時押し処理

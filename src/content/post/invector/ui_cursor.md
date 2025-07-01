@@ -3,6 +3,7 @@ title: パッドでのUI操作
 description: UIカーソルの配置などの準備方法
 thumbnail: ./imgs/mouse.jpg
 category: { id: ui, name: UI }
+directory: 'invector'
 ---
 
 # UIカーソルのパッド対応

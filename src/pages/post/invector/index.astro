@@ -1,21 +1,23 @@
 ---
-import Layout from "../../layouts/Layout.astro"
-import Card from "../../components/Card.astro";
+import Layout from "../../../layouts/Layout.astro"
+import Card from "../../../components/Card.astro";
 import { getCollection } from "astro:content";
-const posts = await getCollection('invector');
+
+const posts = await getCollection('post')
+const filteredPost = posts.filter(post => post.data.directory === 'invector')
 ---
 
 <Layout>
   <div class="row">
     {
       
-      posts.map((post) => (
+      filteredPost.map((post) => (
         <div class="col-lg-3 col-md-6 col-sm-12">
           <Card
             title={post.data.title}
             thumbnail={post.data.thumbnail}
             description={post.data.description}
-            href={`/invector/${post.slug}`}
+            href={`/UnityContent/post/${post.slug}`}
           />
         </div>
       ))

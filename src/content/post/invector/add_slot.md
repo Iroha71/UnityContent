@@ -4,6 +4,7 @@ description: 装備枠の追加とUIの編集方法
 thumbnail: ./imgs/bottle_tools.jpg
 category: { id: ui, name: UI }
 tags: ["UI", "戦闘"]
+directory: 'invector'
 ---
 
 # 装備スロットの追加

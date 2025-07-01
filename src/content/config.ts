@@ -11,6 +11,7 @@ const postCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     thumbnail: image(),
+    directory: z.string().optional(),
     category: category,
     tags: z.array(z.string()).optional(),
   }),
@@ -18,5 +19,4 @@ const postCollection = defineCollection({
 
 export const collections = {
   post: postCollection,
-  invector: postCollection,
 }
