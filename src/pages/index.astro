@@ -1,37 +1,33 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import invector from '../content/post/invector/imgs/invector.webp';
 import { getCollection } from 'astro:content';
-import invector from '../content/invector/imgs/invector.webp';
+import Card from '../components/Card.astro';
+
 const posts = await getCollection('post');
+
+const filteredPosts = posts.filter(post => !post.data.directory)
 ---
 
 <Layout>
-	<div class="row">
-    <div class="col">
-      <p>記事一覧</p>
-    </div>
-  </div>
   <div class="row">
-    <div class="col-lg-3 col-md-6 col-sm-12">
-      <Card 
-        title="Invector"
+     <div class="col-lg-3 col-md-6 col-sm-12">
+      <Card title="Invector"
         description="TPSコントローラー"
         thumbnail={invector}
-        href='/UnityContent/invector'
+        href="/UnityContent/post/invector"
       />
-    </div>
-    {
-      posts.map((post) => (
+     </div>
+     {
+      filteredPosts.map(post => (
         <div class="col-lg-3 col-md-6 col-sm-12">
-          <Card
-            title={post.data.title}
+          <Card title={post.data.title}
             description={post.data.description}
             thumbnail={post.data.thumbnail}
-            href={`/UnityContent/post/${post.slug}`}
+            href={`/UnityContent/post/${post.slug}`} 
           />
         </div>
       ))
-    }
+     }
   </div>
 </Layout>

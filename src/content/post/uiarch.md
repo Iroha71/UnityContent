@@ -2,6 +2,8 @@
 title: UIについての資料
 description: UIアーキテクチャまとめ・UltimateGUIの情報
 thumbnail: ./thumbnails/display_room.jpg
+category: ui
+tag: ["astro"]
 ---
 
 # UIアーキテクチャのまとめ

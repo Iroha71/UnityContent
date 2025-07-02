@@ -2,6 +2,7 @@
 title: ゲームデザインTIPS
 description: ゲームデザインに関する資料
 thumbnail: ./thumbnails/game_devices.jpg
+category: design
 ---
 
 # ゲームデザイン資料
@@ -9,6 +10,12 @@ thumbnail: ./thumbnails/game_devices.jpg
 ## ダメージ計算
 
 ***
+
+```mermaid
+graph TD
+  A[start] --> B{Is it working?}
+  B--> |YES| C[Freate]
+```
 
 ### 基本の計算式
 

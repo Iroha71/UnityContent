@@ -2,6 +2,8 @@
 title: ローリングキャンセル
 description: 実装方法や硬直解消・設定値の記載
 thumbnail: ./imgs/rolling.jpg
+category: controller
+directory: 'invector'
 ---
 
 # ローリングキャンセルの実装

@@ -9,7 +9,18 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/mdx": "^4.3.0",
+    "@astrojs/react": "^4.3.0",
+    "@astrojs/vue": "^5.1.0",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
     "astro": "^5.9.4",
-    "bootstrap": "^5.3.7"
+    "bootstrap": "^5.3.7",
+    "dotenv": "^16.5.0",
+    "playwright": "^1.53.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "rehype-mermaid": "^3.0.0",
+    "vue": "^3.5.17"
   }
 }

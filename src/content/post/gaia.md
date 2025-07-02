@@ -2,6 +2,7 @@
 title: Gaia
 description: 地形生成アセット
 thumbnail: ./thumbnails/gaia.webp
+category: env
 ---
 
 # GAIA

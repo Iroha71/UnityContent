@@ -2,7 +2,9 @@
 title: AIへのパラメータ追加
 description: AIへのパラメータ（スタミナなど）の追加方法
 thumbnail: ./imgs/ai.jpg
+category: ai
 tags: ["AI"]
+directory: 'invector'
 ---
 
 # AIへの新しいパラメータの追加（スタミナなど）

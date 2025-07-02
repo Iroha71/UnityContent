@@ -2,6 +2,7 @@
 title: セーブシステムの実装
 description: シーケンス図を記載
 thumbnail: ./thumbnails/savepoint.jpg
+category: design
 ---
 
 # セーブロードシステムについて

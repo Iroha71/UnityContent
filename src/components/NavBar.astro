@@ -1,6 +1,10 @@
+---
+const version = import.meta.env.VERSION ?? 'dev'
+---
+
 <nav class="navbar text-bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand text-light" href="/UnityContent">Unity Content</a>
-    <span class="d-flex">ver.1.0.0</span>
+    <span class="d-flex">ver.{version}</span>
   </div>
 </nav>

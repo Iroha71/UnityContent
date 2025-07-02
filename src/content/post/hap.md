@@ -2,6 +2,7 @@
 title: Horse Animset Pro
 description: 騎乗システム
 thumbnail: ./thumbnails/hap.webp
+category: controller
 ---
 
 # Horse Animset Pro

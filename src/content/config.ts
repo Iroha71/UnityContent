@@ -6,11 +6,12 @@ const postCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     thumbnail: image(),
+    directory: z.string().optional(),
+    category: z.string(),
     tags: z.array(z.string()).optional(),
   }),
 });
 
 export const collections = {
   post: postCollection,
-  invector: postCollection,
 }
