@@ -2,7 +2,7 @@
 title: Quest machine
 description: クエスト作成アセット
 thumbnail: ./thumbnails/questmachine.webp
-category: { id: rpg, name: RPG }
+category: tool
 ---
 
 # Qeust Machine

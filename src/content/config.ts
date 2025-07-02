@@ -1,10 +1,5 @@
 import { z, defineCollection } from "astro:content";
 
-const category = z.object({
-  name: z.string(),
-  id: z.string(),
-})
-
 const postCollection = defineCollection({
   type: 'content',
   schema: ({ image }) => z.object({
@@ -12,7 +7,7 @@ const postCollection = defineCollection({
     description: z.string(),
     thumbnail: image(),
     directory: z.string().optional(),
-    category: category,
+    category: z.string(),
     tags: z.array(z.string()).optional(),
   }),
 });

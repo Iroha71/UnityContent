@@ -2,7 +2,7 @@
 title: ローリングキャンセル
 description: 実装方法や硬直解消・設定値の記載
 thumbnail: ./imgs/rolling.jpg
-category: { id: controller, name: キャラ操作 }
+category: controller
 directory: 'invector'
 ---
 

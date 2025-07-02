@@ -2,7 +2,7 @@
 title: Dialogue System
 description: 会話シーン実装アセット
 thumbnail: ./thumbnails/dialoguesystem.webp
-category: { id: rpg, name: RPG }
+category: tool
 ---
 
 # Dialogue System

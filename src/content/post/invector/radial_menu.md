@@ -2,7 +2,7 @@
 title: 円形メニュー作り方
 description: 実装用スクリプトの記載
 thumbnail: ./imgs/cut_pie.jpg
-category: { id: ui, name: UI }
+category: ui
 directory: 'invector'
 ---
 

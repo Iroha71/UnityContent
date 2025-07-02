@@ -2,7 +2,7 @@
 title: スタン状態の実装
 description: 実装方法の記載
 thumbnail: ./imgs/blur_light.jpg
-category: { id: combat, name: 戦闘 }
+category: combat
 directory: 'invector'
 ---
 

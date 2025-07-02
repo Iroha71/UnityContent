@@ -2,7 +2,7 @@
 title: ロックオン強制解除の実装
 description: スクリプト経由によるロックオン解除方法
 thumbnail: ./imgs/lookon.jpg
-category: { id: combat, name: 戦闘 }
+category: combat
 directory: 'invector'
 ---
 
