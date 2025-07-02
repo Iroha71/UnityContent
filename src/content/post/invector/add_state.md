@@ -2,8 +2,9 @@
 title: ステートの追加
 description: AIの行動ステートの追加方法
 thumbnail: ./imgs/gear.jpg
-category: { id: ai, name: AI }
+category: ai
 tags: ["AI"]
+directory: 'invector'
 ---
 
 # ステートの追加

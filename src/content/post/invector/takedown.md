@@ -2,7 +2,8 @@
 title: テイクダウンの実装
 description: 実装手順の記載
 thumbnail: ./imgs/broken_grass.jpg
-category: { id: combat, name: 戦闘 }
+category: design
+directory: 'invector'
 ---
 
 # テイクダウン
@@ -71,3 +72,13 @@ category: { id: combat, name: 戦闘 }
 9. （任意）ステルスの場合
    1. AI側のDetection > MinDistanceを0にする
       1. 背後に接近時プレイヤーを検知しないようにするため
+
+
+
+- Helperは武器に取り付けるようにする
+- parryも
+- IsOverrideAnimationを設定できるようにし、trueなら再生するindexを上書きする
+- parry
+  - コライダーを準備する
+  - コライダーに接触したものがhitboxか判定（Player以外か）
+  - 本来の被弾判定：武器側のhitboxがontriggerenter→接触先に通知する

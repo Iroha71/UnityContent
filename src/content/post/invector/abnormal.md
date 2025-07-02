@@ -2,8 +2,9 @@
 title: 状態異常等の実装
 description: 状態異常実装方法
 thumbnail: ./imgs/poison.jpg
-category: { id: design, name: 設計 }
+category: design
 tags: ["戦闘"]
+directory: 'invector'
 ---
 
 # 状態異常等の実装

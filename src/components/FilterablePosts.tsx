@@ -52,7 +52,7 @@ const FilterablePosts: FC<Props> = ({posts}) => {
 
   return (
     <div className="row w-100">
-      <CategoryFilter categories={getCategories(posts)} onChange={setCategories} />
+      {/* <CategoryFilter categories={getCategories(posts)} onChange={setCategories} />
       {
         filteredPosts.map(post => (
           <div className="col-lg-3 col-md-6 col-sm-12" key={post.title}>
@@ -60,11 +60,11 @@ const FilterablePosts: FC<Props> = ({posts}) => {
               thumbnail={post.thumbnail}
               title={post.title}
               description={post.description}
-              href={`/UnityContent/post/${post.slug}`}
+              href={`/UnityContent/${post.directory}/${post.slug}`}
             />
           </div>
         ))
-      }
+      } */}
     </div>
   )
 }
