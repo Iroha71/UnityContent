@@ -18,7 +18,9 @@ jobs:
         uses: actions/checkout@v4
       - name: 最新タグの取得
         id: get_latest_tag
-        run: echo "VERSION=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
+        run: echo "VERSION=${{ github.ref_name }}" >> $GITHUB_ENV
+      - name: タグ表示
+      - run: printf '%s\n' "$VERSION"
       - name: ライブラリのインストールとビルド
         env:
           VERSION: ${{ env.VERSION }}
