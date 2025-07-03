@@ -1,8 +1,8 @@
 name: Github Pagesへのデプロイ
 on:
   push:
-    branches:
-      - main
+    tags:
+      - "ver*"
   workflow_dispatch:
 
 permissions:
