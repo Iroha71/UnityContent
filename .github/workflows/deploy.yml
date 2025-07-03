@@ -21,6 +21,8 @@ jobs:
       - name: タグ表示
         id: display_tag
         run: printf '%s\n' "$VERSION"
+      - name: Playwrightの依存インストール
+        run: yarn playwright install
       - name: ライブラリのインストールとビルド
         env:
           VERSION: ${{ env.VERSION }}
