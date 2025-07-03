@@ -3,6 +3,7 @@ on:
   push:
     tags:
       - "ver*"
+  workflow_dispatch:
 
 permissions:
   contents: read
