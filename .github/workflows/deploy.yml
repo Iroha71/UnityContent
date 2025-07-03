@@ -20,7 +20,8 @@ jobs:
         id: get_latest_tag
         run: echo "VERSION=${{ github.ref_name }}" >> $GITHUB_ENV
       - name: タグ表示
-      - run: printf '%s\n' "$VERSION"
+        id: display_tag
+        run: printf '%s\n' "$VERSION"
       - name: ライブラリのインストールとビルド
         env:
           VERSION: ${{ env.VERSION }}
