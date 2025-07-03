@@ -22,7 +22,7 @@ jobs:
         id: display_tag
         run: printf '%s\n' "$VERSION"
       - name: Playwrightの依存インストール
-        run: yarn playwright install
+        run: yarn create playwright
       - name: ライブラリのインストールとビルド
         env:
           VERSION: ${{ env.VERSION }}
