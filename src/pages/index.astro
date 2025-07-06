@@ -17,6 +17,7 @@ const filteredPosts = posts.filter(post => !post.data.directory)
         thumbnail={invector}
         href="/UnityContent/post/invector"
         tags={[]}
+        categoryId={ 'controller' }
       />
      </div>
      {
@@ -27,6 +28,7 @@ const filteredPosts = posts.filter(post => !post.data.directory)
             thumbnail={post.data.thumbnail}
             href={`/UnityContent/post/${post.slug}`}
             tags={post.data.tags}
+            categoryId={ post.data.category }
           />
         </div>
       ))

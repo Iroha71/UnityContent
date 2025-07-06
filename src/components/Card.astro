@@ -2,6 +2,7 @@
 import { language } from "../consts/message";
 import { Image } from "astro:assets";
 import TagBadge from "./TagBadge.astro";
+import { getCategoryName } from "../consts/variables";
 interface Props {
   title: string;
   description: string;
@@ -12,9 +13,10 @@ interface Props {
       format: "png" | "jpg" | "jpeg" | "tiff" | "webp" | "gif" | "svg" | "avif";
   };
   href: string;
+  categoryId: string;
   tags: string[] | undefined;
 }
-const { title, description, thumbnail, href, tags } = Astro.props;
+const { title, description, thumbnail, href, tags, categoryId } = Astro.props;
 ---
 
 <div class="card mb-3">
@@ -25,6 +27,7 @@ const { title, description, thumbnail, href, tags } = Astro.props;
     <a href={href} class="btn btn-primary">{ language.SHOW_POST }</a>
   </div>
   <div class="card-footer">
+    <span class="rounded-pill badge text-bg-dark">{ getCategoryName(categoryId) }</span>
     {
       tags !== undefined
       ? tags.map(tag => (

@@ -24,6 +24,7 @@ const filteredPosts = posts.filter(post => post.data.tags?.includes(tag))
             description={post.data.description}
             href={`/UnityContent/post/${post.slug}`}
             tags={post.data.tags}
+            categoryId={ post.data.category }
           />
         </div>
       ))
