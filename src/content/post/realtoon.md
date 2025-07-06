@@ -3,6 +3,7 @@ title: Real Toon
 description: アニメ調シェーダー
 thumbnail: ./thumbnails/realtoon.webp
 category: shader
+tags: ['anime']
 ---
 
 # Realtoonの設定について

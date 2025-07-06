@@ -9,11 +9,9 @@ const getPostNumByCategory = (categoryId: string) => {
   return filteredPost.length;
 }
 const { category } = Astro.params;
-console.log(category)
 ---
-<div class="col-md-3 col-lg-2">
-  <p>カテゴリ一覧</p>
-  <div class="list-group">
+<div class="col-sm-12 col-md-12 col-lg-2 mb-4">
+  <div class="list-group d-none d-sm-block" id="categoryList">
     <a 
       href="/UnityContent/"
       aria-current="true"
@@ -32,5 +30,39 @@ console.log(category)
         </a>
       ))
     }
+  </div>
+  <!-- モバイル表示用の開閉可能なカテゴリ選択メニュー -->
+  <div class="d-sm-none">
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#categoryOffcanvas" aria-controls="categoryOffcanvas">カテゴリ一覧</a>
+  </div>
+  <div class="offcanvas offcanvas-start d-sm-none" 
+    tabindex="-1" 
+    id="categoryOffcanvas" 
+    aria-labelledby="categoryOffcanvasLabel"
+  >
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="categoryOffcanvasLabel">category</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <a 
+        href="/UnityContent/"
+        aria-current="true"
+        class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+      >
+        ホームへ
+      </a>
+      {
+        CATEGORIES.map(_category => (
+          <a 
+            class={`${_category.id === category ? 'active' : ''} list-group-item list-group-item-action d-flex justify-content-between align-items-center`}
+            aria-current="true"
+            href={`/UnityContent/categories/${_category.id}`}>
+            { _category.name }
+            <span class="badge bg-primary">{ getPostNumByCategory(_category.id) }</span>
+          </a>
+        ))
+      }
+    </div>
   </div>
 </div>
