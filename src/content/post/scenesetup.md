@@ -3,6 +3,7 @@ title: シーン作成時の作業
 description: 追加すべきオブジェクトを記載
 thumbnail: ./thumbnails/controllers.jpg
 category: tips
+tags: ['todo']
 ---
 
 # シーン追加した際に行う事

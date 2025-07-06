@@ -2,15 +2,15 @@
 import Layout from "../../layouts/Layout.astro";
 import Card from "../../components/Card.astro";
 import { getCollection } from "astro:content";
-import { CATEGORIES } from "../../consts/variables";
+import { TAGS } from "../../consts/variables";
 
 export async function getStaticPaths() {
-  return CATEGORIES.map(category => ({ params: { category: category.id } }))
+  return TAGS.map(tag => ({ params: { tag: tag.id } }))
 }
 
-const { category } = Astro.params;
+const { tag } = Astro.params;
 const posts = await getCollection('post');
-const filteredPosts = posts.filter(post => post.data.category === category)
+const filteredPosts = posts.filter(post => post.data.tags?.includes(tag))
 ---
 
 <Layout>
