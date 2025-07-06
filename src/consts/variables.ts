@@ -23,3 +23,13 @@ export const CATEGORIES = [
   { id: 'combat', name: '戦闘' },
   { id: 'shader', name: 'シェーダー' },
 ]
+
+export const TAGS = [
+  { id: 'rpg', name: 'RPG' },
+  { id: 'anime', name: 'アニメ' },
+  { id: 'todo', name: 'やること' },
+]
+
+export const getTagName = (id: string) => {
+  return TAGS.find(tag => tag.id === id)?.name
+}

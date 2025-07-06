@@ -1,0 +1,32 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Card from "../../components/Card.astro";
+import { getCollection } from "astro:content";
+import { TAGS } from "../../consts/variables";
+
+export async function getStaticPaths() {
+  return TAGS.map(tag => ({ params: { tag: tag.id } }))
+}
+
+const { tag } = Astro.params;
+const posts = await getCollection('post');
+const filteredPosts = posts.filter(post => post.data.tags?.includes(tag))
+---
+
+<Layout>
+<div class="row">
+    {
+      filteredPosts.map(post => (
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <Card
+            title={post.data.title}
+            thumbnail={post.data.thumbnail}
+            description={post.data.description}
+            href={`/UnityContent/post/${post.slug}`}
+            tags={post.data.tags}
+          />
+        </div>
+      ))
+    }
+  </div>
+</Layout>
