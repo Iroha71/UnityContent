@@ -24,6 +24,10 @@ export const CATEGORIES = [
   { id: 'shader', name: 'シェーダー' },
 ]
 
+export const getCategoryName = (id: string) => {
+  return CATEGORIES.find(category => category.id === id)?.name
+}
+
 export const TAGS = [
   { id: 'rpg', name: 'RPG' },
   { id: 'anime', name: 'アニメ' },
