@@ -16,6 +16,7 @@ const filteredPosts = posts.filter(post => !post.data.directory)
         description="TPSコントローラー"
         thumbnail={invector}
         href="/UnityContent/post/invector"
+        tags={[]}
       />
      </div>
      {
@@ -24,7 +25,8 @@ const filteredPosts = posts.filter(post => !post.data.directory)
           <Card title={post.data.title}
             description={post.data.description}
             thumbnail={post.data.thumbnail}
-            href={`/UnityContent/post/${post.slug}`} 
+            href={`/UnityContent/post/${post.slug}`}
+            tags={post.data.tags}
           />
         </div>
       ))
