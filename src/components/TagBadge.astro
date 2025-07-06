@@ -1,0 +1,12 @@
+---
+import { getTagName } from '../consts/variables'
+
+interface Props {
+  tagId: string;
+}
+
+const { tagId } = Astro.props
+---
+<a href=`/UnityContent/tags/${tagId}`>
+  <span class="badge bg-secondary">{ getTagName(tagId) }</span>
+</a>
