@@ -4,7 +4,7 @@ description: 状態異常実装方法
 thumbnail: ./imgs/poison.jpg
 category: design
 tags: ["戦闘"]
-directory: 'invector'
+directory: invector
 ---
 
 # 状態異常等の実装

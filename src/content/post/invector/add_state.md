@@ -4,7 +4,7 @@ description: AIの行動ステートの追加方法
 thumbnail: ./imgs/gear.jpg
 category: ai
 tags: ["AI"]
-directory: 'invector'
+directory: invector
 ---
 
 # ステートの追加

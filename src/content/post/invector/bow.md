@@ -4,7 +4,7 @@ description: 弓を任意のオブジェクトで設定する方法
 thumbnail: ./imgs/bow.jpg
 category: combat
 tags: ["戦闘"]
-directory: 'invector'
+directory: invector
 ---
 
 # 弓の分析
