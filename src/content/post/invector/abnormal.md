@@ -23,9 +23,23 @@ directory: invector
   - BuffNode
     - BuffDataやFactoryをまとめて設定・渡すクラス
 
-![BuffData・Factoryの関係性](./imgs/buffdata_factory_relation.png)
+``` mermaid
+---
+title: 状態異常関連クラスの関係性
+config:
+  class:
+    hideEmptyMembersBox: true
+---
+classDiagram
 
-![StatusEffectClass](./imgs/status_effect_class.png)
+BuffData --> BuffFactory: 蓄積量や効果・時間を提供
+BuffFactory --> Buff: バフを生成
+
+note for Buff "毒状態などを表現する"
+```
+
+![abnormal class](./designs/abnormal/abnormal%20class.png)
+![abnormal sequence](./designs/abnormal/abnormal%20seqence.png)
 
 ## BuffData / BuffFactory / Buff
 

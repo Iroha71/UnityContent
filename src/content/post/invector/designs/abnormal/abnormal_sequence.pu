@@ -1,0 +1,32 @@
+@startuml abnormal seqence
+title 状態異常の流れ
+
+participant AbnormalGiver as giver
+participant BuffData as buffdata
+participant AbnormalReceiver as receiver
+participant ReceiveEffectConfig as config
+participant BuffFactory as factory
+participant Buff as buff
+
+[o-> giver++ : Send(target)
+  giver <-- buffdata : 設定されている全BuffDataを取得
+  loop Giverに設定されているBuffData分
+  giver -> receiver++ : ApplyEffect(giver, buffData)
+    receiver -> receiver++ : GetConfig(buffName)
+      receiver -> config++ : エフェクト名が一致するものを検索
+      return 一致したconfig
+    deactivate receiver
+    receiver -> receiver : buffData.MaxStackにconfig.Regist代入
+    receiver -> config++ : factory.GetBuff(giver, receiver, buffData)
+      config -> factory++ : GetBuff(giver, receiver, buffData)
+        factory -> buff** : 生成(giver, receiver, buffData)
+      deactivate factory
+    return 生成されたBuff
+    receiver -> buff--++ : Apply()
+      buff -> buff++ : AddStack(buffData.Stack, buffData.MaxStack)
+        opt buffData.Stack >= buffData.MaxStack
+          buff -> buff : 状態異常発動
+        end
+      return
+  end
+@enduml

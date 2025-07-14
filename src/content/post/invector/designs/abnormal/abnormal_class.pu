@@ -1,0 +1,59 @@
+@startuml abnormal class
+title 状態異常関連のクラス
+hide empty members
+
+class BuffData {
+  + Name: string
+  + Duration: float
+  + EffectValue: float
+  + Stack: int
+  + MaxStack: int
+}
+
+class Buff {
+  + Data: BuffData
+  + Giver: AbnormalGiver
+  + Receiver: AbnormalReceiver
+  # isEffectinf: bool
+  + OnRemoved: UnityAction<Buff>
+  + Buff(data: BuffData, giver: AbnormalGiver, receiver: AbnormalReceiver)
+  + AddStack(value: int, maxStack: int)
+}
+
+class BuffFactory {
+  + GetBuff(buffData: BuffData, giver: AbnormalGiver, receiver: AbnormalReceiver) Buff
+}
+
+class AbnormalGiver {
+  - giveAbnormals: List<BuffData>
+  + Send(target: Transform) void
+}
+
+class AbnormalReceiver {
+  - allowedAbnormals: List<AbnormalReceiveConfig>
+  - activeAbnormals: List<Buff>
+  + ApplyEffect(buffData: BuffData) void
+  - GetConfig(buffName: string) AbnormalReceiveConfig
+}
+
+class AbnormalReceiveConfig {
+  + Name: string
+  + Regist: float
+  + BehaviourFactory: BuffFactory
+  + GetFactory() BuffFactory
+}
+
+class PoisonFactory
+class Poison {
+  - TakePoisonDamage() IEnumerator
+}
+
+AbnormalGiver o-- BuffData
+AbnormalReceiver o-- AbnormalReceiveConfig
+AbnormalReceiveConfig ..> BuffFactory
+Buff ..> BuffData
+AbnormalReceiver o-- Buff
+BuffFactory <|-- PoisonFactory
+Buff <|-- Poison
+
+@enduml
