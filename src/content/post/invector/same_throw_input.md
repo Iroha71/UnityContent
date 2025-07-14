@@ -3,7 +3,7 @@ title: エイムと投擲の両立方法
 description: 状況に応じて処理を出しわける方法
 thumbnail: ./imgs/game_devices.jpg
 category: controller
-directory: 'invector'
+directory: invector
 ---
 
 # エイムと投擲を同じボタンで行う

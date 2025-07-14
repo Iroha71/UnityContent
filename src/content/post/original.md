@@ -1,7 +1,7 @@
 ---
 title: 自作スクリプト集
 description: マップ機能など自作したコンポーネントまとめ
-thumbnail: ./thumbnails/tower.jpg
+thumbnail: ./imgs/thumbnails/tower.jpg
 category: design
 ---
 

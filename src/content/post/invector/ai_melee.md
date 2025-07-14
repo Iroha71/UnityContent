@@ -4,7 +4,7 @@ description: AIの予備動作実装や弾きメカニズム
 thumbnail: ./imgs/spark.jpg
 category: ai
 tags: ["戦闘"]
-directory: 'invector'
+directory: invector
 ---
 
 # 予備動作と弾きの実装
