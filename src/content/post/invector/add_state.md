@@ -45,4 +45,39 @@ directory: invector
   - vAISendMessage→vMessageReceiver→vAIMoveToPosition.Move()
   - vFSMChangeBehaviourでCivilianToShooter→ShooterSniperへ変更
 
-  ![sniper](./imgs/take_item.png)
+``` mermaid
+---
+title: 武器を取りに行く処理の遷移
+---
+sequenceDiagram
+
+actor enemy as Enemy
+participant fsm as FSM
+participant send as vAISendMessage
+participant receiver as vMessageReceiver
+participant aimove as vAIMoveToPosition
+
+enemy ->> fsm: Search for Weaponステートへ遷移
+activate fsm
+  fsm ->> send: DoAction()
+deactivate fsm
+activate send
+  send ->> receiver: Send("SearchForWeapon")
+deactivate send
+activate receiver
+  receiver ->> aimove: Move("SearchForWeapon")
+deactivate receiver
+activate aimove
+  aimove ->> aimove: SearchForWeaponに設定された位置へ移動
+  aimove -->> aimove: OnFinishMove.Invoke()
+  aimove -->> enemy: 武器取得アニメーション再生
+  aimove -->> enemy: 武器の有効化
+deactivate aimove
+enemy ->> aimove: Move("GoToSniperPosition")
+activate aimove
+  aimove ->> aimove: GoToSniperPositionに設定された位置へ移動
+  aimove -->> fsm: StopFSM()
+  aimove -->> fsm: Spiper用FSMに切り替える
+  aimove -->> fsm: StartFSM()
+deactivate aimove
+```
