@@ -1,7 +1,7 @@
 ---
 title: ゲーム内での服装変更方法
 description: 実装方法について記載
-thumbnail: ./thumbnails/hanger.jpg
+thumbnail: ./imgs/thumbnails/hanger.jpg
 category: design
 ---
 

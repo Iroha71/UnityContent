@@ -3,7 +3,7 @@ title: テイクダウンの実装
 description: 実装手順の記載
 thumbnail: ./imgs/broken_grass.jpg
 category: design
-directory: 'invector'
+directory: invector
 ---
 
 # テイクダウン

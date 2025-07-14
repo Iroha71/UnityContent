@@ -1,7 +1,7 @@
 ---
 title: 役立つTIPS
 description: ゲームデザインや実装で役立つメモ
-thumbnail: ./thumbnails/filament_bulb.jpg
+thumbnail: ./imgs/thumbnails/filament_bulb.jpg
 category: tips
 ---
 

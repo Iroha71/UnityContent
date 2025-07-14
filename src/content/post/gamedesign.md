@@ -1,7 +1,7 @@
 ---
 title: ゲームデザインTIPS
 description: ゲームデザインに関する資料
-thumbnail: ./thumbnails/game_devices.jpg
+thumbnail: ./imgs/thumbnails/game_devices.jpg
 category: design
 ---
 

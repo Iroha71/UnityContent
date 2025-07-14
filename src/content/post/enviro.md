@@ -1,7 +1,7 @@
 ---
 title: Enviro3
 description: 天候操作アセット
-thumbnail: ./thumbnails/enviro.webp
+thumbnail: ./imgs/thumbnails/enviro.webp
 category: env
 ---
 

@@ -3,7 +3,7 @@ title: 投擲物作成と軌道計算
 description: 作成方法・軌道計算方法について
 thumbnail: ./imgs/explode.jpg
 category: combat
-directory: 'invector'
+directory: invector
 ---
 
 # 投擲物作成と軌道計算
