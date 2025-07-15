@@ -30,6 +30,18 @@ const getTocIndent = (depth: number): string => {
     <NavBar />
 		<div class="container py-3">
       <div class="row">
+        <div class="d-none d-sm-block">
+          <ul class="nav flex-column position-fixed start-0 ms-5">
+            <li><h6 class="nav-item">目次</h6></li>
+            {
+              tocs.map(toc => (
+                <li class={getTocIndent(toc.depth)}>
+                  <a href={`#${toc.slug}`} class="nav-link">{toc.text}</a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
         <div class="col-lg-8 col-md-12 col-sm-12 mx-auto">
           <slot />
         </div>
