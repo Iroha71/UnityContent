@@ -13,6 +13,7 @@ directory: invector
   - [アニメーション設定](#アニメーション設定)
   - [パリィ用スクリプト作成](#パリィ用スクリプト作成)
   - [仕様](#仕様)
+  - [ガード時に呼ばれるダメージ軽減処理](#ガード時に呼ばれるダメージ軽減処理)
 
 
 ## ガードブレイク
@@ -134,3 +135,48 @@ directory: invector
 ### 仕様
 
 ![just_guard](./imgs/just_guard.png)
+
+### ガード時に呼ばれるダメージ軽減処理
+
+vDamage.cs
+
+``` csharp
+/// <summary>
+/// Calc damage Resuction percentage
+/// </summary>
+/// <param name="damageReduction"></param>
+public void ReduceDamage(float damageReduction)
+{
+    int result = (int)(this.damageValue - ((this.damageValue * damageReduction) / 100));
+    this.damageValue = result;
+}
+```
+
+呼び出し元 vMeleeCombatInput.cs
+
+``` csharp
+public virtual void OnReceiveAttack(vDamage damage, vIMeleeFighter attacker)
+{
+    // character is blocking
+    if (!damage.ignoreDefense && isBlocking && meleeManager != null && meleeManager.CanBlockAttack(damage.sender.position))
+    {
+        var damageReduction = meleeManager.GetDefenseRate();
+        if (damageReduction > 0)
+        {
+            damage.ReduceDamage(damageReduction);
+        }
+
+        if (attacker != null && meleeManager != null && meleeManager.CanBreakAttack())
+        {
+            attacker.BreakAttack(meleeManager.GetDefenseRecoilID());
+        }
+        OnDefenseWithAttacker?.Invoke(attacker);
+        meleeManager.OnDefense();
+        cc.currentStaminaRecoveryDelay = damage.staminaRecoveryDelay;
+        cc.currentStamina -= damage.staminaBlockCost;
+    }
+    // apply damage
+    damage.hitReaction = !isBlocking || damage.ignoreDefense;
+    cc.TakeDamage(damage);
+}
+```
