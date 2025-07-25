@@ -116,12 +116,22 @@ directory: invector
 ## 弾丸の編集
 
 - vDefaultBullet
-  - Trailを削除する
-  - bulletオブジェクトを適当なサイズに変更する
+  - trail > Trail RendererのColorを任意の色に変更し、透明度を255に統一する。
+  - trail > Trail Rendererの時間を減らす。（0.025など）
+  - trailマテリアルの色を変更する。
 
 ## リロード
 
 - 武器にvAnimatorEventReceiverを取り付ける
+- RemovableClipの作成
+  - マガジンと同じ階層に空オブジェクト（**RemovableClip**）を作成する。
+  - RemovableClipに`VInstantiate`を取り付ける。
+    - プレハブ：マガジンのプレハブ
+    - Instantiate On Start：Off
+    - Set This as Parent：On
+- マガジンのプレハブの作成
+  - 設定するコンポーネント
+    - Box Collider / Rigidbody / VDestroy Game Object / VRemove Parent
 - AnimatorEventsの設定を行う
   - マガジンを落とす演出
   
