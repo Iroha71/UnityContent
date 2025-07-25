@@ -10,9 +10,9 @@ directory: invector
 
 - [ID設定](#id設定)
 - [スナイパースコープの設定例](#スナイパースコープの設定例)
-- [IK設定](#ik設定)
 - [エイムカメラ](#エイムカメラ)
 - [武器の設定](#武器の設定-1)
+- [IK設定](#ik設定)
 - [エフェクト](#エフェクト)
 - [弾丸の編集](#弾丸の編集)
 - [リロード](#リロード)
@@ -53,21 +53,6 @@ directory: invector
   - Aim Canvas > AimID_0_Sniper
     - Scope Aim Groupe
 
-
-## IK設定
-
-- Invector > Shooter > IK Adjust Windowを開く
-- Unityを再生し、プレイヤーに武器を装備させる
-- 「Hand IK Target」を選択する
-  - 右手・左手の球体を選択し、適切な位置になるように変更する
-  - ここで設定した内容はしゃがみやエイム時などの状態に引き継がれる
-- Adjustの設定は以下の4つを設定する
-  - 非エイム時・立ち/しゃがみ
-  - エイム時・立ち/しゃがみ
-- IK Adjustの設定は武器カテゴリごとに設定する
-  - カテゴリの設定は武器 > Weapon Settings > Weapon Category
-- 武器ごとにLeftHandIKの位置を調整する
-
 ## エイムカメラ
 
 - vThirdPersonCameraのAiming設定を変更する
@@ -84,8 +69,23 @@ directory: invector
   ![aim_reference](./imgs/aim_reference.png)
 
 - Lefthand IK
+  - 左の手首が来る位置に設定する。
 
-  ![lefthand_ik](./imgs/lefthand_ik.png)
+  ![lefthand_ik](./imgs/lefthand_ik_ref.png)
+
+## IK設定
+
+- Invector > Shooter > IK Adjust Windowを開く
+- Unityを再生し、プレイヤーに武器を装備させる
+- 「Hand IK Target」を選択する
+  - 右手・左手の球体を選択し、適切な位置になるように変更する
+  - ここで設定した内容はしゃがみやエイム時などの状態に引き継がれる
+- Adjustの設定は以下の4つを設定する
+  - 非エイム時・立ち/しゃがみ
+  - エイム時・立ち/しゃがみ
+- IK Adjustの設定は武器カテゴリごとに設定する
+  - カテゴリの設定は武器 > Weapon Settings > Weapon Category
+- 武器ごとにLeftHandIKの位置を調整する
 
 ## エフェクト
 
