@@ -97,6 +97,9 @@ directory: invector
   - Attack Distance: 1.25
   - Min Distance Of The Target: 1
   - Combat Distance: 2.5
+## NavmeshAgent / CapsuleCollider
+
+- サイズをキャラクターに合うように調整する。
 
 ## Root Motionの修正
 
