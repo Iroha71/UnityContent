@@ -79,24 +79,15 @@ directory: invector
   |---|---|
   |Min Attack Time|0.5|
   |Max|3|
-  |Attack Distance|1.25 ~ 1.65|
+  |Attack Distance|武器の長さ＋腕の長さを合わせた値を参考にする|
   |Min Stay Blocking Time|1|
   |Max|3|
-  |Min Distance Of The Target|1 ~ 1.4|
-  |Combat Distance|2.5~3|
+  |Min Distance Of The Target|0.1~0.3|
+  |Combat Distance|2.5~4|
 
-## AIの調整項目
+## NavmeshAgent / CapsuleCollider
 
-- vControlAI > Movement > StrafeSpeed
-  - WalkSpeed
-  - RunningSpeed
-- vControlAI > Agent
-  - Aceleration: 50
-  - Stoping Distance: 1
-- vControlAI > Combat Settings
-  - Attack Distance: 1.25
-  - Min Distance Of The Target: 1
-  - Combat Distance: 2.5
+- サイズをキャラクターに合うように調整する。
 
 ## Root Motionの修正
 

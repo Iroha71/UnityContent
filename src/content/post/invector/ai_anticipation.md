@@ -17,10 +17,8 @@ directory: invector
     ![anticipation_state](./imgs/anticipation_state.png)
 3. 予備動作ステート > 速度を負の値に設定し、逆再生されるようにしておく。
 
-## 予備動作作成時のTIPS
+4. 作成した予備動作について、Animation Designerでアニメーションを調整する。
 
-Animation Designerでアニメーションを調整する。
-
-- Clip Time Flowの線を調整し、**最初は速く、後半は遅く**なるように速度を調整すると動作が認識しやすい。
-    ![clip time flow](./imgs/anticipation_anim_config.png)
-- 必要に応じてClip Duration Multipilerを延長する。
+    - Clip Time Flowの線を調整し、**最初は速く、後半は遅く**なるように速度を調整すると動作が認識しやすい。
+      ![clip time flow](./imgs/anticipation_anim_config.png)
+    - 必要に応じてClip Duration Multipilerを延長する。
